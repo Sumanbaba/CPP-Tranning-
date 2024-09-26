@@ -4,6 +4,10 @@ using namespace std;
 class Vehicle{
     protected:
     Vehicle(){}
+    public:
+    virtual void start() = 0; // Declare start as a pure virtual function
+    virtual void drive() = 0; // Declare drive as a pure virtual function
+    virtual void stop() = 0;  // Declare stop as a pure virtual function
 };
 class Car:public Vehicle{
     public: void start(){
@@ -44,7 +48,7 @@ class VehicleDrivingSimulator{
   void startSimulation(Vehicle* vehicleAddress){
       vehicleAddress->start();
       vehicleAddress->drive();
-      vehicleAddres->halt();
+      vehicleAddress->stop();
   }
  
  };
@@ -56,7 +60,7 @@ Bus busObj;
 VehicleDrivingSimulator simulator;
 
 simulator.startSimulation(&carObj); // "Car Push Button Start,FWD Drive , Stopped
-simulator.startSimulation(&truckObj)// "Key Start,RWD Drive , Stopped;
+simulator.startSimulation(&truckObj);// "Key Start,RWD Drive ,Stopped
 simulator.startSimulation(&busObj);// "Key Start,RWD Drive , Stopped;
 
 }
